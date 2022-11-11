@@ -2,18 +2,22 @@ using PRN211_HE153232.DataAccess;
 
 namespace PRN211_HE153232
 {
-    public partial class Form1 : Form
+    public partial class Products : Form
     {
         
-        public Form1()
+        public Products()
         {
             InitializeComponent();
             dgvProducts.AutoGenerateColumns = false;
             dgvProducts.Columns.Add("pname", "Product's Name");
+            dgvProducts.Columns["pname"].DataPropertyName = "pname";
             dgvProducts.Columns.Add("description", "Infor");
+            dgvProducts.Columns["description"].DataPropertyName = "description";
             dgvProducts.Columns.Add("price", "Price");
+            dgvProducts.Columns["price"].DataPropertyName = "price";
             dgvProducts.Columns.Add("qty", "On Stock");
-            
+            dgvProducts.Columns["qty"].DataPropertyName = "qty";
+
             DataGridViewButtonColumn viewCol = new DataGridViewButtonColumn();
             viewCol.HeaderText = "Product's detail";
             viewCol.Name = "view";
@@ -24,9 +28,17 @@ namespace PRN211_HE153232
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            DAOCategories daoCategories = new DAOCategories();
+            cbCategory.ValueMember = "cid";
+            cbCategory.DisplayMember = "cname";
+            cbCategory.DataSource = daoCategories.listAllCategories();
+            DAOProducts daoProducts = new DAOProducts();
+            dgvProducts.DataSource = daoProducts.listAllProducts();
         }
 
-        
+        public void LoadProducts()
+        {
+            
+        }
     }
 }

@@ -19,16 +19,22 @@ namespace PRN211_HE153232.DataAccess
         {
             SqlCommand command = new SqlCommand(sql, GetConnection());
             if (parameters != null)
+            {
                 command.Parameters.AddRange(parameters);
+            }
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             return dt;
         }
+        //Dung cho edit, update, delete
         public static int ExecuteSQL(string sql, params SqlParameter[] parameters)
         {
             SqlCommand command = new SqlCommand(sql, GetConnection());
-            if (parameters != null) command.Parameters.AddRange(parameters);
+            if (parameters != null)
+            {
+                command.Parameters.AddRange(parameters);
+            }
             command.Connection.Open();
             int k = command.ExecuteNonQuery();
             command.Connection.Close();

@@ -1,6 +1,6 @@
 ﻿namespace PRN211_HE153232
 {
-    partial class Form1
+    partial class Products
     {
         /// <summary>
         ///  Required designer variable.
