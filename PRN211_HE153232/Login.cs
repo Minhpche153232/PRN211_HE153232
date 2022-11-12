@@ -27,7 +27,7 @@ namespace PRN211_HE153232
             Accounts acc = account.GetAccounts(user, pass);
             if (acc.password.Equals(pass))
             {
-                Products f = new Products();
+                Product f = new Product();
                 f.Show();
                 this.Hide();
             }

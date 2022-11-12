@@ -143,6 +143,7 @@
             this.Controls.Add(this.txtName3);
             this.Name = "View";
             this.Text = "View";
+            this.Load += new System.EventHandler(this.View_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtQty3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrice3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

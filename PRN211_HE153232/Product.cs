@@ -1,11 +1,13 @@
 using PRN211_HE153232.DataAccess;
+using PRN211_HE153232.Models;
+using System.Windows.Forms;
 
 namespace PRN211_HE153232
 {
-    public partial class Products : Form
+    public partial class Product : Form
     {
         
-        public Products()
+        public Product()
         {
             InitializeComponent();
             dgvProducts.AutoGenerateColumns = false;
@@ -20,7 +22,7 @@ namespace PRN211_HE153232
 
             DataGridViewButtonColumn viewCol = new DataGridViewButtonColumn();
             viewCol.HeaderText = "Product's detail";
-            viewCol.Name = "view";
+            viewCol.Name = "viewcol";
             viewCol.Text = "View";
             viewCol.UseColumnTextForButtonValue = true;
             dgvProducts.Columns.Add(viewCol);
@@ -45,7 +47,13 @@ namespace PRN211_HE153232
 
         private void dgvProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (dgvProducts.Columns[e.ColumnIndex].Name.Equals("viewcol"))
+            {
+                List<Products> products = (List<Products>)dgvProducts.DataSource;
+                Products p = products[e.RowIndex];
+                View form = new View();
+                form.Show();
+            }
         }
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)

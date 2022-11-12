@@ -23,7 +23,7 @@ namespace PRN211_HE153232
 
         private void btnShop_Click(object sender, EventArgs e)
         {
-            Products products = new Products();
+            Product products = new Product();
             products.Show();
             this.Hide();
         }
