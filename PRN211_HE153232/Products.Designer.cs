@@ -32,6 +32,7 @@
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,8 +43,9 @@
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.RowHeadersWidth = 51;
             this.dgvProducts.RowTemplate.Height = 29;
-            this.dgvProducts.Size = new System.Drawing.Size(938, 361);
+            this.dgvProducts.Size = new System.Drawing.Size(826, 361);
             this.dgvProducts.TabIndex = 0;
+            this.dgvProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellContentClick);
             // 
             // cbCategory
             // 
@@ -52,6 +54,7 @@
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(163, 28);
             this.cbCategory.TabIndex = 1;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -73,16 +76,26 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Products in store:";
             // 
-            // Form1
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(722, 121);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(126, 38);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Add one";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 538);
+            this.ClientSize = new System.Drawing.Size(850, 538);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.dgvProducts);
-            this.Name = "Form1";
+            this.Name = "Products";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
@@ -97,5 +110,6 @@
         private ComboBox cbCategory;
         private Label label1;
         private Label label2;
+        private Button btnAdd;
     }
 }

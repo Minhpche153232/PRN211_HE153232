@@ -14,6 +14,10 @@ namespace PRN211_HE153232.Models
         public string secret { get; set; }
         public bool isAdmin { get; set; }
 
+        public Accounts()
+        {
+        }
+
         public Accounts(string username, string password, string uid, string secret, bool isAdmin)
         {
             this.username = username;

@@ -57,6 +57,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(117, 28);
             this.textBox1.Name = "textBox1";
+            this.textBox1.PlaceholderText = "Input username";
             this.textBox1.Size = new System.Drawing.Size(215, 27);
             this.textBox1.TabIndex = 2;
             // 
@@ -64,6 +65,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(117, 87);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PlaceholderText = "******";
             this.textBox2.Size = new System.Drawing.Size(215, 27);
             this.textBox2.TabIndex = 3;
             // 
@@ -75,6 +77,7 @@
             this.btnLogin2.TabIndex = 4;
             this.btnLogin2.Text = "Login";
             this.btnLogin2.UseVisualStyleBackColor = true;
+            this.btnLogin2.Click += new System.EventHandler(this.btnLogin2_Click);
             // 
             // Login
             // 
@@ -88,6 +91,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -23,12 +23,16 @@ namespace PRN211_HE153232
 
         private void btnShop_Click(object sender, EventArgs e)
         {
-
+            Products products = new Products();
+            products.Show();
+            this.Hide();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
 
         

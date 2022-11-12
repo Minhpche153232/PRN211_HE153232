@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using PRN211_HE153232.Models;
 using System;
 using System.Collections.Generic;
@@ -26,8 +26,9 @@ namespace PRN211_HE153232.DataAccess
         }
         public List<Models.Products> listProductByCategory(int cid)
         {
-            string sql = @"select p.* from products p, categories c 
-                                    where p.cid = @cid and p.cid = c.cid";
+            string sql = @"select p.* 
+                           from products p, categories c 
+                           where p.cid = @cid and p.cid = c.cid";
             SqlParameter pr1 = new SqlParameter("@cid", SqlDbType.Int);
             pr1.Value = cid;
             DataTable data = DAO.GetDataBySQL(sql);

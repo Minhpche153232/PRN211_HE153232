@@ -38,7 +38,20 @@ namespace PRN211_HE153232
 
         public void LoadProducts()
         {
+            int cid = Convert.ToInt32(cbCategory.SelectedValue);
+            DAOProducts daoProducts = new DAOProducts();
+            //dgvProducts.DataSource = daoProducts.listProductByCategory(cid);
+        }
+
+        private void dgvProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
             
+            LoadProducts();
         }
     }
 }
