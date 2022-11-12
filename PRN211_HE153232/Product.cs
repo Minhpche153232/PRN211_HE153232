@@ -75,5 +75,12 @@ namespace PRN211_HE153232
             
             LoadProducts();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Add formAdd = new Add();
+            formAdd.Show();
+            this.Hide();
+        }
     }
 }

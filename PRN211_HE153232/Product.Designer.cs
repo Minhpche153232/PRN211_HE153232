@@ -78,14 +78,15 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(722, 121);
+            this.btnAdd.Location = new System.Drawing.Point(712, 121);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(126, 38);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add one";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // Products
+            // Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -95,7 +96,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.dgvProducts);
-            this.Name = "Products";
+            this.Name = "Product";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
