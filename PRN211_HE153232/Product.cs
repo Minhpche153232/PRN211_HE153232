@@ -26,6 +26,13 @@ namespace PRN211_HE153232
             viewCol.Text = "View";
             viewCol.UseColumnTextForButtonValue = true;
             dgvProducts.Columns.Add(viewCol);
+
+            DataGridViewButtonColumn EditCol = new DataGridViewButtonColumn();
+            EditCol.HeaderText = "Edit";
+            EditCol.Name = "edit";
+            EditCol.Text = "Edit";
+            EditCol.UseColumnTextForButtonValue = true;
+            dgvProducts.Columns.Add(EditCol);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -51,8 +58,15 @@ namespace PRN211_HE153232
             {
                 List<Products> products = (List<Products>)dgvProducts.DataSource;
                 Products p = products[e.RowIndex];
-                View form = new View();
-                form.Show();
+                View formView = new View();
+                formView.Show();
+            }
+            if (dgvProducts.Columns[e.ColumnIndex].Name.Equals("edit"))
+            {
+                List<Products> products = (List<Products>)dgvProducts.DataSource;
+                Products p = products[e.RowIndex];
+                Edit formEdit = new Edit();
+                formEdit.Show();
             }
         }
 
